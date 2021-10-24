@@ -105,6 +105,6 @@ INSERT INTO `usuario` (`idusuario`, `usuario`, `senha`, `perfil_idperfil`) VALUE
 --
 -- Restrições para a tabela `usuario`
 --
-ALTER TABLE `usuario`
-  ADD CONSTRAINT `fk_usuario_perfil` FOREIGN KEY (`perfil_idperfil`) REFERENCES `perfil` (`idperfil`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `profissional`
+  ADD CONSTRAINT `paciente_ibfk_1` FOREIGN KEY (`idperfil`) REFERENCES `perfil` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 

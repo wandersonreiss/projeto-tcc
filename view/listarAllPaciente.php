@@ -30,8 +30,8 @@
             echo "  <td>{$c["telefone"]}</td>";
             echo "  <td>{$c["data_nascimento"]}</td>";
             echo "  <td>{$c["dum"]}</td>";
-            echo "  <td><a href='../controller/excluirProfissionalByIdController.php?id={$c["id"]}'>Excluir</a></td>";
-            echo "  <td><a href='alterarProfissional.php?id={$c["id"]}'>Alterar</a></td>";
+            echo "  <td><a href='../controller/excluirPacienteByIdController.php?id={$c["id"]}'>Excluir</a></td>";
+            echo "  <td><a href='alterarPaciente.php?id={$c["id"]}'>Alterar</a></td>";
             echo "</tr>";
         }
 

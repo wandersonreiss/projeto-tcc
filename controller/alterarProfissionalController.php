@@ -5,10 +5,10 @@ require_once '../dao/profissionalDAO.php';
 
 // recuperei os dados do formulario
 $nome = $_POST["nome"];
-$cpf = $_POST["email"];
-$rg = $_POST["senha"];
-$sexo = $_POST["crm"];
-$endereco = $_POST["coren"];
+$email = $_POST["email"];
+$senha = $_POST["senha"];
+$crm = $_POST["crm"];
+$coren = $_POST["coren"];
 $id = $_POST["id"];
 
 $profissionalDTO = new ProfissionalDTO();

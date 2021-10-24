@@ -40,13 +40,21 @@ class PacienteDAO {
         }
     }
 
-    public function excluirProfissional($id) {
+    public function excluirPaciente($id) {
         try {
-            $sql = "DELETE FROM profissional 
+            $sqlCheck = "SET foreign_key_checks = 0;";
+            $stmtCheck = $this->pdo->prepare($sqlCheck);
+            $stmtCheck->execute();
+
+            $sql = "DELETE FROM paciente 
                    WHERE id = ?";
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindValue(1, $id);
             $stmt->execute();
+
+            $sqlCheck = "SET foreign_key_checks = 1;";
+            $stmtCheck = $this->pdo->prepare($sqlCheck);
+            $stmtCheck->execute();
         } catch (PDOException $exc) {
             echo $exc->getMessage();
         }
@@ -65,20 +73,23 @@ class PacienteDAO {
         }
     }
 
-    public function updateProfissionalById(ProfissionalDTO $profissionalDTO) {
+    public function updatePacienteById(PacienteDTO $pacienteDTO) {
         try {
-            $sql = "UPDATE profissional SET nome=?,
-                                       email=?,
-                                       senha=?,
-                                       crm=?,
-                                       coren=?
+            $sql = "UPDATE paciente SET nome=?,
+                                       cpf=?,
+                                       endereco=?,
+                                       telefone=?,
+                                       data_nascimento=?,
+                                       dum=?
                     WHERE id= ?";
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindValue(1, $profissionalDTO->getNome());
-            $stmt->bindValue(2, $profissionalDTO->getEmail());
-            $stmt->bindValue(3, $profissionalDTO->getSenha());
-            $stmt->bindValue(4, $profissionalDTO->getCrm());
-            $stmt->bindValue(5, $profissionalDTO->getCoren());
+            $stmt->bindValue(1, $pacienteDTO->getNome());
+            $stmt->bindValue(2, $pacienteDTO->getCpf());
+            $stmt->bindValue(3, $pacienteDTO->getEndereco());
+            $stmt->bindValue(4, $pacienteDTO->getTelefone());
+            $stmt->bindValue(5, $pacienteDTO->getDataNascimento());
+            $stmt->bindValue(6, $pacienteDTO->getDum());
+            $stmt->bindValue(7, $pacienteDTO->getId());
             $stmt->execute();
             
             

@@ -40,11 +40,19 @@ class ProfissionalDAO {
 
     public function excluirProfissional($id) {
         try {
+            $sqlCheck = "SET foreign_key_checks = 0;";
+            $stmtCheck = $this->pdo->prepare($sqlCheck);
+            $stmtCheck->execute();
+
             $sql = "DELETE FROM profissional 
                    WHERE id = ?";
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindValue(1, $id);
             $stmt->execute();
+
+            $sqlCheck = "SET foreign_key_checks = 1;";
+            $stmtCheck = $this->pdo->prepare($sqlCheck);
+            $stmtCheck->execute();
         } catch (PDOException $exc) {
             echo $exc->getMessage();
         }
@@ -77,6 +85,7 @@ class ProfissionalDAO {
             $stmt->bindValue(3, $profissionalDTO->getSenha());
             $stmt->bindValue(4, $profissionalDTO->getCrm());
             $stmt->bindValue(5, $profissionalDTO->getCoren());
+            $stmt->bindValue(6, $profissionalDTO->getId());
             $stmt->execute();
             
             
