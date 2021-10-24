@@ -7,12 +7,13 @@ $profissional = $_POST["email"];
 $senha = $_POST["senha"];
 
 $loginDAO = new LoginDAO();
-$profissional = $loginDAO->login($profissional, $senha);
+$profissional = $loginDAO->login($profissional, $senha, $id);
 
 if (!empty($profissional)) {
 
     $_SESSION["usuario"] = $profissional["email"];
     $_SESSION["perfil"] = $profissional["perfil"];
+    $_SESSION["id"] = $profissional["id"];
     echo "<script>";
     echo "window.location.href = '../view/principal.php';";
     echo "</script> ";

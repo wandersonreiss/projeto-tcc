@@ -12,7 +12,7 @@ class LoginDAO {
 
     public function login($email,$senha) {
         try {
-            $sql = "SELECT prof.email, p.perfil FROM profissional prof
+            $sql = "SELECT prof.email, p.perfil, prof.id FROM profissional prof
                     INNER JOIN perfil p ON (prof.idperfil = p.id)
                     WHERE email=? AND senha=?";
             $stmt = $this->pdo->prepare($sql);
