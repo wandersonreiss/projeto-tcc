@@ -5,35 +5,28 @@
         <title></title>
     </head>
     <body>
-        <form action="../controller/cadastrarClienteController.php" method="post">
+        <form action="../controller/cadastrarProfissionalController.php" method="post">
             <table>
                 <tr>
                     <td>Nome:</td>
                     <td><input type="text" name="nome" size="50"/></td>
                 </tr>
                 <tr>
-                    <td>CPF:</td>
-                    <td><input type="text" name="cpf"/></td>
+                    <td>Email:</td>
+                    <td><input type="text" name="email"/></td>
                 </tr>                
                 <tr>
-                    <td>RG:</td>
-                    <td><input type="text" name="rg"/></td>
+                    <td>Senha</td>
+                    <td><input type="text" name="senha"/></td>
                 </tr>                                
                 <tr>
-                    <td>Data de Nascimento:</td>
-                    <td><input type="text" name="datanascimento"/></td>
-                </tr>                                                
+                    <td>CRM:</td>
+                    <td><input type="text" name="crm"/></td>
+                </tr>  
                 <tr>
-                    <td>Sexo:</td>
-                    <td>
-                        Masculino <input type="radio" name="sexo" value="masc"/>
-                        Feminino <input type="radio" name="sexo" value="fem"/>
-                    </td>
-                </tr>                                
-                <tr>
-                    <td>Endereço:</td>
-                    <td><input type="text" size="60" name="endereco"/></td>
-                </tr>                                                
+                    <td>COREN:</td>
+                    <td><input type="text" name="coren"/></td>
+                </tr>  
                 <tr>                    
                     <td colspan="2">
                         <input type="submit" value="Cadastrar"/>

@@ -2,17 +2,17 @@
 session_start();
 require_once '../dao/loginDAO.php';
 
-$usuario = $_POST["usuario"];
+$profissional = $_POST["email"];
 // $senha = md5($_POST["senha"]);
 $senha = $_POST["senha"];
 
 $loginDAO = new LoginDAO();
-$usuario = $loginDAO->login($usuario, $senha);
+$profissional = $loginDAO->login($profissional, $senha);
 
-if (!empty($usuario)) {
+if (!empty($profissional)) {
 
-    $_SESSION["usuario"] = $usuario["usuario"];
-    $_SESSION["perfil"] = $usuario["perfil"];
+    $_SESSION["usuario"] = $profissional["email"];
+    $_SESSION["perfil"] = $profissional["perfil"];
     echo "<script>";
     echo "window.location.href = '../view/principal.php';";
     echo "</script> ";

@@ -29,7 +29,8 @@ CREATE TABLE IF NOT EXISTS `profissional` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 INSERT INTO `profissional` (`id`, `nome`, `email`, `senha`, `crm`, `coren`, `idperfil`) VALUES
-(1, 'Wanderson Elias', 'wanderson@controle.com','202cb962ac59075b964b07152d234b70', '', '8700-DF', 2);
+(1, 'Elias', 'elias@controle.com','202cb962ac59075b964b07152d234b70', '', '8700-DF', 2),
+(2, 'Wanderson', 'reis@controle.com','202cb962ac59075b964b07152d234b70', '', '8700-DF', 1);
 
 -------------------------
 

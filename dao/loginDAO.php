@@ -10,13 +10,13 @@ class LoginDAO {
         $this->pdo = Conexao::getInstance();
     }
 
-    public function login($usuario,$senha) {
+    public function login($email,$senha) {
         try {
-            $sql = "SELECT u.usuario,p.perfil FROM usuario u
-                    INNER JOIN perfil p ON (u.perfil_idperfil = p.idperfil)
-                    WHERE usuario=? AND senha=?";
+            $sql = "SELECT prof.email, p.perfil FROM profissional prof
+                    INNER JOIN perfil p ON (prof.idperfil = p.id)
+                    WHERE email=? AND senha=?";
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindValue(1, $usuario);
+            $stmt->bindValue(1, $email);
             $stmt->bindValue(2, $senha);
             $stmt->execute();
             $login = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -30,3 +30,8 @@ class LoginDAO {
 }
 
 ?>
+
+
+SELECT u.usuario,p.perfil FROM usuario u
+INNER JOIN perfil p ON (u.perfil_idperfil = p.idperfil)
+WHERE usuario="otavio" AND senha="123456789";

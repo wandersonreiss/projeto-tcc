@@ -1,32 +1,29 @@
 <?php
 
-require_once '../dto/clienteDTO.php';
-require_once '../dao/clienteDAO.php';
-include '../js/funcaoData.php';
+require_once '../dto/profissionalDTO.php';
+require_once '../dao/profissionalDAO.php';
 
 // recuperei os dados do formulario
 $nome = $_POST["nome"];
-$cpf = $_POST["cpf"];
-$rg = $_POST["rg"];
-$datanascimento = dateBRtoDateUS($_POST["datanascimento"]);
-$sexo = $_POST["sexo"];
-$endereco = $_POST["endereco"];
-$idcliente = $_POST["idcliente"];
+$cpf = $_POST["email"];
+$rg = $_POST["senha"];
+$sexo = $_POST["crm"];
+$endereco = $_POST["coren"];
+$id = $_POST["id"];
 
-$clienteDTO = new ClienteDTO();
-$clienteDTO->setNome($nome);
-$clienteDTO->setCpf($cpf);
-$clienteDTO->setRg($rg);
-$clienteDTO->setDatanascimento($datanascimento);
-$clienteDTO->setSexo($sexo);
-$clienteDTO->setEndereco($endereco);
-$clienteDTO->setIdcliente($idcliente);
+$profissionalDTO = new ProfissionalDTO();
+$profissionalDTO->setNome($nome);
+$profissionalDTO->setEmail($email);
+$profissionalDTO->setSenha($senha);
+$profissionalDTO->setCrm($crm);
+$profissionalDTO->setCoren($coren);
+$profissionalDTO->setId($id);
 
-$clienteDAO = new ClienteDAO();
-$clienteDAO->updateClienteById($clienteDTO);
+$profissionalDAO = new ProfissionalDAO();
+$profissionalDAO->updateProfissionalById($profissionalDTO);
 
 
 echo "<script>";
-echo "window.location.href = '../view/listarAllCliente.php';";
+echo "window.location.href = '../view/listarAllProfissional.php';";
 echo "</script> ";
 ?>
