@@ -5,16 +5,14 @@
         <title></title>
     </head>
     <body>
-        <h1>Administrador</h1>
-        <table border="0" width="100%">
-            <tr>
-                <td>
-                    <a href="listarAllProfissional.php" target="centro">Lista de profissionais</a> |
-                    <a href="cadastrarProfissional.php" target="centro">Cadastrar profissional</a> |
-                    <a href="cadastrarPaciente.php" target="centro">Cadastrar paciente</a> |
-                    <a href="listarAllPaciente.php" target="centro">Lista de pacientes</a>
-                </td>
-        </table>
-
+        <div class="navbar d-flex flex-column mt-4" style="width: 25vw;">
+            <h1 class="fs-4 text">Controle pré-natal</h1>
+            <div>
+                <a href="listarAllProfissional.php" target="centro" class="btn btn-primary btn-personalized">Lista de profissionais</a>
+                <a href="cadastrarProfissional.php" target="centro" class="btn btn-secondary btn-personalized">Cadastrar profissional</a>
+                <a href="cadastrarPaciente.php" target="centro" class="btn btn-secondary btn-personalized">Cadastrar paciente</a>
+                <a href="listarAllPaciente.php" target="centro" class="btn btn-secondary btn-personalized">Lista de pacientes</a>
+            </div>
+        </div>
     </body>
 </html>

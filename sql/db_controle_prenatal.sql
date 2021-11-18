@@ -48,6 +48,4 @@ CREATE TABLE IF NOT EXISTS `paciente` (
 
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
--- INSERT INTO `paciente` (`id`, `nome`, `cpf`, `endereco`, `telefone`, `data_nascimento`, `dum`, `idprofissional`) VALUES
-
 
