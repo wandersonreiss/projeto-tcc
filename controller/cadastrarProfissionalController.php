@@ -10,8 +10,7 @@ $senha = $_POST["senha"];
 $crm = $_POST["crm"];
 $coren = $_POST["coren"];
 $datanascimento = dateBRtoDateUS($_POST["datanascimento"]);
-$sexo = $_POST["sexo"];
-$endereco = $_POST["endereco"];
+$idperfil = ( isset($_POST['idperfil']) ) ? '1' : '2';
 
 $profissionalDTO = new ProfissionalDTO();
 $profissionalDTO->setNome($nome);
@@ -19,6 +18,7 @@ $profissionalDTO->setEmail($email);
 $profissionalDTO->setSenha($senha);
 $profissionalDTO->setCrm($crm);
 $profissionalDTO->setCoren($coren);
+$profissionalDTO->setIdPerfil($idperfil);
 
 $profissionalDAO = new ProfissionalDAO();
 $sucesso = $profissionalDAO->salvarProfissional($profissionalDTO);

@@ -16,6 +16,11 @@ body {
     margin-bottom: 15px;
 }
 
+.input-container{
+    width: 60%;
+    margin-left: 100px;
+}
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #A4A8BB;
 }
@@ -42,7 +47,4 @@ body {
     height: 55px;
     border-radius: 20px;
     margin-top: 20px;
-}
-
-.navbar {
 }

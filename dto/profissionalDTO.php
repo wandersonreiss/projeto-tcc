@@ -7,6 +7,7 @@ class ProfissionalDTO {
     private $senha;
     private $crm;
     private $coren;
+    private $idperfil;
     
     public function getId() {
         return $this->id;
@@ -54,6 +55,14 @@ class ProfissionalDTO {
 
     public function setCoren($coren) {
         $this->coren = $coren;
+    }
+
+    public function getIdPerfil() {
+        return $this->idperfil;
+    }
+
+    public function setIdPerfil($idperfil) {
+        $this->idperfil = $idperfil;
     }
 }
 

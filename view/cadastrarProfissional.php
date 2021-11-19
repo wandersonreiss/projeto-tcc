@@ -3,36 +3,24 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title></title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../css/estilo.css">
     </head>
-    <body>
+    <body style="margin-left: 40px;">
+        <h1 class="fs-3 text mb-5">Cadastrar profissional</h1>
         <form action="../controller/cadastrarProfissionalController.php" method="post">
-            <table>
-                <tr>
-                    <td>Nome:</td>
-                    <td><input type="text" name="nome" size="50"/></td>
-                </tr>
-                <tr>
-                    <td>Email:</td>
-                    <td><input type="text" name="email"/></td>
-                </tr>                
-                <tr>
-                    <td>Senha</td>
-                    <td><input type="text" name="senha"/></td>
-                </tr>                                
-                <tr>
-                    <td>CRM:</td>
-                    <td><input type="text" name="crm"/></td>
-                </tr>  
-                <tr>
-                    <td>COREN:</td>
-                    <td><input type="text" name="coren"/></td>
-                </tr>  
-                <tr>                    
-                    <td colspan="2">
-                        <input type="submit" value="Cadastrar"/>
-                    </td>
-                </tr>                                                                
-            </table>
+            <input type="text" name="nome" size="50" placeholder="Nome" class="input-default"/>
+            <input type="text" name="email" size="50" placeholder="Email" class="input-default"/>
+            <input type="text" name="senha" size="50" placeholder="Senha" class="input-default"/>
+            <div class="d-flex">
+                <input type="text" name="crm" size="50" placeholder="CRM" class="input-default"/>
+                <input type="text" name="coren" size="50" placeholder="COREN" class="input-default"/>
+            </div>
+            <div class="text-center">
+                <input type="checkbox" name="idperfil" value="on">
+                <span class="text-secondary">Administrador</span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-personalized mt-5">Cadastrar</button>
         </form>
         <center>
             <?php 

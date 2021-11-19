@@ -25,13 +25,14 @@ class ProfissionalDAO {
     public function salvarProfissional(ProfissionalDTO $profissionalDTO) {
         try {
             $sql = "INSERT INTO `profissional` (`nome`, `email`, `senha`, `crm`, `coren`, `idperfil`)
-                    VALUES (?,?,?,?,?,'2')";
+                    VALUES (?,?,?,?,?,?)";
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindValue(1, $profissionalDTO->getNome());
             $stmt->bindValue(2, $profissionalDTO->getEmail());
             $stmt->bindValue(3, $profissionalDTO->getSenha());
             $stmt->bindValue(4, $profissionalDTO->getCrm());
             $stmt->bindValue(5, $profissionalDTO->getCoren());
+            $stmt->bindValue(6, $profissionalDTO->getIdPerfil());
             return $stmt->execute();
         } catch (PDOException $exc) {
             echo $exc->getMessage();
@@ -75,17 +76,13 @@ class ProfissionalDAO {
         try {
             $sql = "UPDATE profissional SET nome=?,
                                        email=?,
-                                       senha=?,
-                                       crm=?,
-                                       coren=?
+                                       senha=?
                     WHERE id= ?";
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindValue(1, $profissionalDTO->getNome());
             $stmt->bindValue(2, $profissionalDTO->getEmail());
             $stmt->bindValue(3, $profissionalDTO->getSenha());
-            $stmt->bindValue(4, $profissionalDTO->getCrm());
-            $stmt->bindValue(5, $profissionalDTO->getCoren());
-            $stmt->bindValue(6, $profissionalDTO->getId());
+            $stmt->bindValue(4, $profissionalDTO->getId());
             $stmt->execute();
             
             

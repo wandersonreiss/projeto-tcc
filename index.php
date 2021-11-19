@@ -18,7 +18,7 @@
                     <div>
                         <input type="password" name="senha" placeholder="senha" class="input-default"/>
                     </div>
-                    <button type="submit" class="btn btn-primary .btn-personalized">
+                    <button type="submit" class="btn btn-primary btn-personalized">
                         Entrar
                     </button>
                 </form> 
